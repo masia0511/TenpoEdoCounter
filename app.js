@@ -2,113 +2,113 @@
 
 let k_cnt = 0;
 let s_cnt = 0;
-let city_cnt = 0;
-let boss_cnt = 0;
+let t_city_cnt = 0;
+let t_boss_cnt = 0;
 
-//´–›ƒJƒEƒ“ƒg•Ï”
+//æ¸…éº¿ã‚«ã‚¦ãƒ³ãƒˆå¤‰æ•°
 let k_upButton = document.getElementById("k_cntUp");
 let k_downButton = document.getElementById("k_cntDown");
 let k_up10Button = document.getElementById("k_cnt10Up");
 let k_down10Button = document.getElementById("k_cnt10Down");
 let k_currentCnt = document.getElementById("k_cnt");
 
-//…SŽqƒJƒEƒ“ƒg•Ï”
+//æ°´å¿ƒå­ã‚«ã‚¦ãƒ³ãƒˆå¤‰æ•°
 let s_upButton = document.getElementById("s_cntUp");
 let s_downButton = document.getElementById("s_cntDown");
 let s_up10Button = document.getElementById("s_cnt10Up");
 let s_down10Button = document.getElementById("s_cnt10Down");
 let s_currentCnt = document.getElementById("s_cnt");
 
-//]ŒËŽs’†ƒ{ƒXƒJƒEƒ“ƒg•Ï”
-let city_upButton = document.getElementById("city_cntUp");
-let city_downButton = document.getElementById("city_cntDown");
-let city_up10Button = document.getElementById("city_cnt10Up");
-let city_down10Button = document.getElementById("city_cnt10Down");
-let city_currentCnt = document.getElementById("city_cnt");
+//æ±Ÿæˆ¸å¸‚ä¸­ãƒœã‚¹ã‚«ã‚¦ãƒ³ãƒˆå¤‰æ•°
+let t_city_upButton = document.getElementById("t_city_cntUp");
+let t_city_downButton = document.getElementById("t_city_cntDown");
+let t_city_up10Button = document.getElementById("t_city_cnt10Up");
+let t_city_down10Button = document.getElementById("t_city_cnt10Down");
+let t_city_currentCnt = document.getElementById("t_city_cnt");
 
-//]ŒËéƒ{ƒXƒJƒEƒ“ƒg•Ï”
-let boss_upButton = document.getElementById("boss_cntUp");
-let boss_downButton = document.getElementById("boss_cntDown");
-let boss_up10Button = document.getElementById("boss_cnt10Up");
-let boss_down10Button = document.getElementById("boss_cnt10Down");
-let boss_currentCnt = document.getElementById("boss_cnt");
+//æ±Ÿæˆ¸åŸŽãƒœã‚¹ã‚«ã‚¦ãƒ³ãƒˆå¤‰æ•°
+let t_boss_upButton = document.getElementById("t_boss_cntUp");
+let t_boss_downButton = document.getElementById("t_boss_cntDown");
+let t_boss_up10Button = document.getElementById("t_boss_cnt10Up");
+let t_boss_down10Button = document.getElementById("t_boss_cnt10Down");
+let t_boss_currentCnt = document.getElementById("t_boss_cnt");
 
-//ƒhƒƒbƒv—¦ŒvŽZ—p•Ï”
+//ãƒ‰ãƒ­ãƒƒãƒ—çŽ‡è¨ˆç®—ç”¨å¤‰æ•°
 let k_currendrop=document.getElementById("kiyomaro_drop");
 let s_currendrop=document.getElementById("suisinsi_drop");
 
 //localStorage.clear();
 
-//webstarage‚É’l‚ª‚ ‚é‚©Šm”F
-//´–›webstarage
+//webstarageã«å€¤ãŒã‚ã‚‹ã‹ç¢ºèª
+//æ¸…éº¿webstarage
 if(localStorage.getItem("str_k_cnt")!= null){
-    //’l‚ª‚ ‚ê‚Îwebstrage‚ÅƒJƒEƒ“ƒg”“Ç‚Ýž‚Þ
+    //å€¤ãŒã‚ã‚Œã°webstrageã§ã‚«ã‚¦ãƒ³ãƒˆæ•°èª­ã¿è¾¼ã‚€
     k_cnt = Number(localStorage.getItem("str_k_cnt"));
-    //ƒy[ƒW‚É•\Ž¦
+    //ãƒšãƒ¼ã‚¸ã«è¡¨ç¤º
     k_currentCnt.innerHTML = k_cnt;
 
 }else{
-    //’l‚ª‚È‚¯‚ê‚Î0‚ðƒZƒbƒg
+    //å€¤ãŒãªã‘ã‚Œã°0ã‚’ã‚»ãƒƒãƒˆ
     Number(localStorage.setItem("str_k_cnt", 0));
 }
-//…SŽqwebstarage
+//æ°´å¿ƒå­webstarage
 if(localStorage.getItem("str_s_cnt")!= null){
-    //’l‚ª‚ ‚ê‚Îwebstrage‚ÅƒJƒEƒ“ƒg”“Ç‚Ýž‚Þ
+    //å€¤ãŒã‚ã‚Œã°webstrageã§ã‚«ã‚¦ãƒ³ãƒˆæ•°èª­ã¿è¾¼ã‚€
     s_cnt = Number(localStorage.getItem("str_s_cnt"));
-    //ƒy[ƒW‚É•\Ž¦
+    //ãƒšãƒ¼ã‚¸ã«è¡¨ç¤º
     s_currentCnt.innerHTML = s_cnt;
 }else{
-    //’l‚ª‚È‚¯‚ê‚Î0‚ðƒZƒbƒg
+    //å€¤ãŒãªã‘ã‚Œã°0ã‚’ã‚»ãƒƒãƒˆ
     Number(localStorage.setItem("str_s_cnt", 0));
 }
-//]ŒËŽs’†ƒ{ƒXwebstarage
-if(localStorage.getItem("str_city_cnt")!= null){
-    //’l‚ª‚ ‚ê‚Îwebstrage‚ÅƒJƒEƒ“ƒg”“Ç‚Ýž‚Þ
-    city_cnt = Number(localStorage.getItem("str_city_cnt"));
-    //ƒy[ƒW‚É•\Ž¦
-    city_currentCnt.innerHTML = city_cnt;
+//æ±Ÿæˆ¸å¸‚ä¸­ãƒœã‚¹webstarage
+if(localStorage.getItem("str_t_city_cnt")!= null){
+    //å€¤ãŒã‚ã‚Œã°webstrageã§ã‚«ã‚¦ãƒ³ãƒˆæ•°èª­ã¿è¾¼ã‚€
+    t_city_cnt = Number(localStorage.getItem("str_t_city_cnt"));
+    //ãƒšãƒ¼ã‚¸ã«è¡¨ç¤º
+    t_city_currentCnt.innerHTML = t_city_cnt;
 }else{
-    //’l‚ª‚È‚¯‚ê‚Î0‚ðƒZƒbƒg
-    Number(localStorage.setItem("str_city_cnt", 0));
+    //å€¤ãŒãªã‘ã‚Œã°0ã‚’ã‚»ãƒƒãƒˆ
+    Number(localStorage.setItem("str_t_city_cnt", 0));
 }
-//]ŒËéƒ{ƒXwebstarage
-if(localStorage.getItem("str_boss_cnt")!= null){
-    //’l‚ª‚ ‚ê‚Îwebstrage‚ÅƒJƒEƒ“ƒg”“Ç‚Ýž‚Þ
-    boss_cnt = Number(localStorage.getItem("str_boss_cnt"));
-    //ƒy[ƒW‚É•\Ž¦
-    boss_currentCnt.innerHTML = boss_cnt;
+//æ±Ÿæˆ¸åŸŽãƒœã‚¹webstarage
+if(localStorage.getItem("str_t_boss_cnt")!= null){
+    //å€¤ãŒã‚ã‚Œã°webstrageã§ã‚«ã‚¦ãƒ³ãƒˆæ•°èª­ã¿è¾¼ã‚€
+    t_boss_cnt = Number(localStorage.getItem("str_t_boss_cnt"));
+    //ãƒšãƒ¼ã‚¸ã«è¡¨ç¤º
+    t_boss_currentCnt.innerHTML = t_boss_cnt;
 }else{
-    //’l‚ª‚È‚¯‚ê‚Î0‚ðƒZƒbƒg
-    Number(localStorage.setItem("str_boss_cnt", 0));
+    //å€¤ãŒãªã‘ã‚Œã°0ã‚’ã‚»ãƒƒãƒˆ
+    Number(localStorage.setItem("str_t_boss_cnt", 0));
 }
 
-//ƒhƒƒbƒv—¦‚ðŒvŽZ‚µ‚Ä•\Ž¦
-k_drop=(k_cnt/city_cnt)*100;
+//ãƒ‰ãƒ­ãƒƒãƒ—çŽ‡ã‚’è¨ˆç®—ã—ã¦è¡¨ç¤º
+k_drop=(k_cnt/t_city_cnt)*100;
 k_currendrop.innerHTML = k_drop.toFixed(2);
-s_drop=(s_cnt/boss_cnt)*100;
+s_drop=(s_cnt/t_boss_cnt)*100;
 s_currendrop.innerHTML = s_drop.toFixed(2);
 
-//´–›ƒhƒƒbƒv—¦ŒvŽZ+webstarage•Û‘¶
+//æ¸…éº¿ãƒ‰ãƒ­ãƒƒãƒ—çŽ‡è¨ˆç®—+webstarageä¿å­˜
 function calc_kDrop(){
-    k_drop=(k_cnt/city_cnt)*100;
+    k_drop=(k_cnt/t_city_cnt)*100;
     k_currendrop.innerHTML = k_drop.toFixed(2);
-    //localStorage‚Éstr_k_cnt‚Æ‚¢‚¤–¼‘O‚Åk_currentCnt‚Ì•Ï”‚ð•Û‘¶
+    //localStorageã«str_k_cntã¨ã„ã†åå‰ã§k_currentCntã®å¤‰æ•°ã‚’ä¿å­˜
     localStorage.setItem("str_k_cnt", k_currentCnt.innerHTML);
-    //localStorage‚Éstr_city_cnt‚Æ‚¢‚¤–¼‘O‚Åcity_currentCnt‚Ì•Ï”‚ð•Û‘¶
-    localStorage.setItem("str_city_cnt", city_currentCnt.innerHTML);
+    //localStorageã«str_t_city_cntã¨ã„ã†åå‰ã§t_city_currentCntã®å¤‰æ•°ã‚’ä¿å­˜
+    localStorage.setItem("str_t_city_cnt", t_city_currentCnt.innerHTML);
 }
 
-//…SŽqƒhƒƒbƒv—¦ŒvŽZ+webstarage•Û‘¶
+//æ°´å¿ƒå­ãƒ‰ãƒ­ãƒƒãƒ—çŽ‡è¨ˆç®—+webstarageä¿å­˜
 function calc_sDrop(){
-    s_drop=(s_cnt/boss_cnt)*100;
+    s_drop=(s_cnt/t_boss_cnt)*100;
     s_currendrop.innerHTML = s_drop.toFixed(2);
-    //localStorage‚Éstr_s_cnt‚Æ‚¢‚¤–¼‘O‚Ås_currentCnt‚Ì•Ï”‚ð•Û‘¶
+    //localStorageã«str_s_cntã¨ã„ã†åå‰ã§s_currentCntã®å¤‰æ•°ã‚’ä¿å­˜
     localStorage.setItem("str_s_cnt", s_currentCnt.innerHTML);
-    //localStorage‚Éstr_boss_cnt‚Æ‚¢‚¤–¼‘O‚Åboss_currentCnt‚Ì•Ï”‚ð•Û‘¶
-    localStorage.setItem("str_boss_cnt", boss_currentCnt.innerHTML);
+    //localStorageã«str_t_boss_cntã¨ã„ã†åå‰ã§t_boss_currentCntã®å¤‰æ•°ã‚’ä¿å­˜
+    localStorage.setItem("str_t_boss_cnt", t_boss_currentCnt.innerHTML);
 }
 
-/*´–›ƒJƒEƒ“ƒg*/
+/*æ¸…éº¿ã‚«ã‚¦ãƒ³ãƒˆ*/
 k_upButton.addEventListener("click", () => {
   k_cnt++;
   k_currentCnt.innerHTML = k_cnt;
@@ -141,7 +141,7 @@ k_down10Button.addEventListener("click", () => {
   calc_kDrop();
 });
 
-/*…SŽqƒJƒEƒ“ƒg*/
+/*æ°´å¿ƒå­ã‚«ã‚¦ãƒ³ãƒˆ*/
 s_upButton.addEventListener("click", () => {
   s_cnt++;
   s_currentCnt.innerHTML = s_cnt;
@@ -174,68 +174,68 @@ s_down10Button.addEventListener("click", () => {
   calc_sDrop();
 });
 
-/*]ŒËŽs’†ƒ{ƒXƒJƒEƒ“ƒg*/
-city_upButton.addEventListener("click", () => {
-  city_cnt++;
-  city_currentCnt.innerHTML = city_cnt;
+/*æ±Ÿæˆ¸å¸‚ä¸­ãƒœã‚¹ã‚«ã‚¦ãƒ³ãƒˆ*/
+t_city_upButton.addEventListener("click", () => {
+  t_city_cnt++;
+  t_city_currentCnt.innerHTML = t_city_cnt;
   calc_kDrop();
 });
 
-city_downButton.addEventListener("click", () => {
-  city_cnt--;
-  if(city_cnt<0){
-      city_cnt++;
+t_city_downButton.addEventListener("click", () => {
+  t_city_cnt--;
+  if(t_city_cnt<0){
+      t_city_cnt++;
   }else{
-      city_currentCnt.innerHTML = city_cnt;
+      t_city_currentCnt.innerHTML = t_city_cnt;
   }
   calc_kDrop();
 });
 
-city_up10Button.addEventListener("click", () => {
-  city_cnt=city_cnt+10;
-  city_currentCnt.innerHTML = city_cnt;
+t_city_up10Button.addEventListener("click", () => {
+  t_city_cnt=t_city_cnt+10;
+  t_city_currentCnt.innerHTML = t_city_cnt;
   calc_kDrop();
 });
 
-city_down10Button.addEventListener("click", () => {
-  city_cnt=city_cnt-10;
-  if(city_cnt<0){
-      city_cnt=city_cnt+10;
+t_city_down10Button.addEventListener("click", () => {
+  t_city_cnt=t_city_cnt-10;
+  if(t_city_cnt<0){
+      t_city_cnt=t_city_cnt+10;
   }else{
-      city_currentCnt.innerHTML = city_cnt;
+      t_city_currentCnt.innerHTML = t_city_cnt;
   }
   calc_kDrop();
 });
 
-/*]ŒËéƒ{ƒXƒJƒEƒ“ƒg*/
-boss_upButton.addEventListener("click", () => {
-  boss_cnt++;
-  boss_currentCnt.innerHTML = boss_cnt;
+/*æ±Ÿæˆ¸åŸŽãƒœã‚¹ã‚«ã‚¦ãƒ³ãƒˆ*/
+t_boss_upButton.addEventListener("click", () => {
+  t_boss_cnt++;
+  t_boss_currentCnt.innerHTML = t_boss_cnt;
   calc_sDrop();
 });
 
-boss_downButton.addEventListener("click", () => {
-  boss_cnt--;
-  if(boss_cnt<0){
-      boss_cnt++;
+t_boss_downButton.addEventListener("click", () => {
+  t_boss_cnt--;
+  if(t_boss_cnt<0){
+      t_boss_cnt++;
   }else{
-      boss_currentCnt.innerHTML = boss_cnt;
+      t_boss_currentCnt.innerHTML = t_boss_cnt;
   }
   calc_sDrop();
 });
 
-boss_up10Button.addEventListener("click", () => {
-  boss_cnt=boss_cnt+10;
-  boss_currentCnt.innerHTML = boss_cnt;
+t_boss_up10Button.addEventListener("click", () => {
+  t_boss_cnt=t_boss_cnt+10;
+  t_boss_currentCnt.innerHTML = t_boss_cnt;
   calc_sDrop();
 });
 
-boss_down10Button.addEventListener("click", () => {
-  boss_cnt=boss_cnt-10;
-  if(boss_cnt<0){
-      boss_cnt=boss_cnt+10;
+t_boss_down10Button.addEventListener("click", () => {
+  t_boss_cnt=t_boss_cnt-10;
+  if(t_boss_cnt<0){
+      t_boss_cnt=t_boss_cnt+10;
   }else{
-      boss_currentCnt.innerHTML = boss_cnt;
+      t_boss_currentCnt.innerHTML = t_boss_cnt;
   }
   calc_sDrop();
 });
