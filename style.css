@@ -1,4 +1,4 @@
-﻿@charset "UTF-8";
+@charset "UTF-8";
 
 h1 {
     background-color: #1c315d;
@@ -24,11 +24,11 @@ body {
     text-align: center;
 }
 
-.kiyomaro, .hizen, .city, .boss, .k_drop, .s_drop { /*ボタン等を横並びに*/
+.kiyomaro, .suisinsi, .t_city, .t_boss, .k_drop, .s_drop { /*ボタン等を横並びに*/
     display: inline-block;
 }
 
-.kiyomaro_div, .suisinsi_div, .city_div, .boss_div { /*カウントdivの大きさ*/
+.kiyomaro_div, .suisinsi_div, .t_city_div, .t_boss_div { /*カウントdivの大きさ*/
     width: 400px;
     height: 100px;
     margin: 20px 10px;
@@ -94,7 +94,7 @@ footer { /*フッターの設定*/
         margin: -5px 2px;
     }
 
-    .kiyomaro_div, .suisinsi_div, .city_div, .boss_div { /*カウントdivの大きさ*/
+    .kiyomaro_div, .suisinsi_div, .t_city_div, .t_boss_div { /*カウントdivの大きさ*/
         width: 350px;
         height: 80px;
         margin: 5px;
@@ -112,6 +112,4 @@ footer { /*フッターの設定*/
         display: flex;
         flex-direction: column;
     }
-}body
-{
 }
