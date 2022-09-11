@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>てんえどカウンタ</title>
+</head>
+<body>
+    <h1>てんえどカウンタ</h1>
+    <p>これは天保江戸での源清麿、水心子正秀のドロップ数やボスの撃破数を記録するだけのアプリです。</p>
+    <div class="count_area">
+        <div class="kiyomaro_div">
+            <!--清麿カウント-->
+            <p>源清麿ドロップ数</p>
+            <input id="k_cnt10Down" class="button kiyomaro" type="button" value="－10" />
+            <input id="k_cntDown" class="button kiyomaro" type="button" value="－" />
+            <p id="k_cnt" class="cnt kiyomaro" readonly>0</p>
+            <input id="k_cntUp" class="button kiyomaro" type="button" value="＋" />
+            <input id="k_cnt10Up" class="button kiyomaro" type="button" value="＋10" />
+            <p class="kiyomaro">回</p>
+        </div>
+        <div class="city_div">
+            <!--江戸市中ボス撃破数-->
+            <p>江戸市中ボス撃破数</p>
+            <input id="city_cnt10Down" class="button city" type="button" value="－10" />
+            <input id="city_cntDown" class="button city" type="button" value="－" />
+            <p input id="city_cnt" class="cnt city" readonly>0</p>
+            <input id="city_cntUp" class="button city" type="button" value="＋" />
+            <input id="city_cnt10Up" class="button city" type="button" value="＋10" />
+            <p class="city">回</p>
+        </div>
+        <div class="suisinsi_div">
+            <!--水心子カウント-->
+            <p>水心子正秀ドロップ数</p>
+            <input id="s_cnt10Down" class="button hizen" type="button" value="－10" />
+            <input id="s_cntDown" class="button hizen" type="button" value="－" />
+            <p input id="s_cnt" class="cnt hizen" readonly>0</p>
+            <input id="s_cntUp" class="button hizen" type="button" value="＋" />
+            <input id="s_cnt10Up" class="button hizen" type="button" value="＋10" />
+            <p class="hizen">回</p>
+        </div>
+        <div class="boss_div">
+            <!--江戸藩邸上屋敷ボス撃破数-->
+            <p>江戸藩邸上屋敷ボス撃破数</p>
+            <input id="boss_cnt10Down" class="button boss" type="button" value="－10" />
+            <input id="boss_cntDown" class="button boss" type="button" value="－" />
+            <p input id="boss_cnt" class="cnt boss" readonly>0</p>
+            <input id="boss_cntUp" class="button boss" type="button" value="＋" />
+            <input id="boss_cnt10Up" class="button boss" type="button" value="＋10" />
+            <p class="boss">回</p>
+        </div>
+    </div>
+    <div class="drop_area">
+        <!--ドロップ率計算-->
+        <div class="drop_anlysis_div">
+            <p>源清麿ドロップ率(源清麿ドロップ数/江戸市中ボス撃破数)</p>
+            <p id="kiyomaro_drop" class="k_drop" readonly>0</p>
+            <p class="k_drop">%</p>
+        </div>
+        <div class="drop_anlysis_div">
+            <p>水心子正秀ドロップ率(水心子正秀ドロップ数/江戸藩邸上屋敷ボス撃破数)</p>
+            <p id="suisinsi_drop" class="s_drop" readonly>0</p>
+            <p class="s_drop">%</p>
+        </div>
+
+    </div>
+    <footer>
+        <p>これは個人の趣味で作られたものであり、公式と一切何の関係もありません</p>
+        <p>バグなどの報告は以下のメールアドレスにお願いします（☆を@に変えてください）</p>
+        <p>連絡先：masia051162☆gmail.com</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
